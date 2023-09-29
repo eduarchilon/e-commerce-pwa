@@ -1,0 +1,41 @@
+<header>
+  <div class="container">
+    <div
+      class="d-flex justify-content-lg-between align-items-lg-center py-3 flex-lg-row flex-column justify-content-start"
+    >
+      <div class="d-flex align-items-center gap-3">
+        <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+        <a class="fs-3 fw-bold text-black text-decoration-none">MOODY STUDIO</a>
+      </div>
+      <div>
+        <button mat-icon-button aria-label="Search">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="LogIn">
+          <mat-icon>person_outline</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Favorites">
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Cart">
+          <mat-icon
+            class="material-icons-outlined"
+            matBadge="15"
+            aria-hidden="false"
+            matBadgeColor="warn"
+            matBadgePosition="after"
+            >shopping_cart</mat-icon
+          >
+        </button>
+      </div>
+    </div>
+    <mat-divider class="header-divider"></mat-divider>
+  </div>
+</header>

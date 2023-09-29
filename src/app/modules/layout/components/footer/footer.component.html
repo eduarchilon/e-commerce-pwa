@@ -1,0 +1,81 @@
+<footer>
+  <div class="footer-menu py-5">
+    <div class="container text-white d-flex justify-content-between">
+      <div
+        [ngClass]="{
+          'footer-item': true,
+          'w-100 text-center align-items-center d-flex flex-column': isToggle
+        }"
+      >
+        <h4 class="pb-3">URBAN OUTFITTERS</h4>
+        <p class="text-white-50">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor.
+        </p>
+        <br />
+        <p class="">121 king street, Melbourne 3000</p>
+        <p class="">+61 3 8376 6284</p>
+        <p class="">contact@urbanoutfitters.com</p>
+        <br />
+        <div class="d-flex gap-4">
+          <mat-icon
+            *ngFor="let smf of smfs"
+            aria-hidden="false"
+            class="mat-icon-white"
+            [svgIcon]="smf.icon.name"
+          ></mat-icon>
+        </div>
+      </div>
+      <div *ngIf="!isToggle" class="footer-item d-flex justify-content-between">
+        <div>
+          <h5 class="pb-3">SHOPPING</h5>
+          <div class="d-flex flex-column gap-2">
+            <a class="fw-light">Your cart</a>
+            <a class="fw-light">Your orders</a>
+            <a class="fw-light">Compared items</a>
+            <a class="fw-light">Wishlist items</a>
+            <a class="fw-light">Shipping detail </a>
+          </div>
+        </div>
+        <div>
+          <h5 class="pb-3">MORE LINK</h5>
+          <div class="d-flex flex-column gap-2">
+            <a class="fw-light">Blog</a>
+            <a class="fw-light">Gift Center</a>
+            <a class="fw-light">Buying Guides</a>
+            <a class="fw-light">New Arrivals</a>
+            <a class="fw-light">Clearance</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-item" *ngIf="!isToggle">
+        <h5 class="pb-3">FROM THE BLOG</h5>
+        <div>
+          <div>
+            <span class="text-white-50 fs-5"
+              >26<span class="fs-4">&nbsp;May</span></span
+            >
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <span class="fs-4 text-white-50">3 comments</span>
+          </div>
+          <br />
+          <mat-divider class="footer-item-divider"></mat-divider>
+          <br />
+          <div>
+            <span class="text-white-50 fs-5"
+              >27<span class="fs-4">&nbsp;May</span></span
+            >
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <span class="fs-4 text-white-50">3 comments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+    <p class="text-white fw-lighter fs-4 text-center py-3">
+      Urban Outfitters © – All rights reserved
+    </p>
+  </div>
+</footer>

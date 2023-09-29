@@ -1,0 +1,41 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    #drawer
+    [ngClass]="{ 'sidenav w-50': true }"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+  >
+    <!-- MENU DRAWER -->
+    <nav *ngIf="isToggle" class="d-flex flex-column py-5">
+      <button
+        *ngFor="let menu of mainMenu"
+        mat-button
+        class="fw-bolder px-5"
+        [routerLink]="menu.path"
+      >
+        {{ menu.name }}
+      </button>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header [isHandset$]="isHandset$" [drawer]="drawer"></app-header>
+    <div *ngIf="!isToggle" class="container">
+      <nav class="d-flex justify-content-evenly py-3">
+        <button
+          *ngFor="let menu of mainMenu"
+          mat-button
+          class="fw-bolder"
+          [routerLink]="menu.path"
+        >
+          {{ menu.name }}
+        </button>
+      </nav>
+      <mat-divider class="header-divider"></mat-divider>
+    </div>
+    <!-- Contenido de paginas -->
+    <router-outlet></router-outlet>
+    <!--Fin Contenido de paginas -->
+    <app-footer [isToggle]="isToggle"></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
