@@ -8,12 +8,11 @@ import { Observable } from 'rxjs';
 export class NotificationService {
   constructor(private httpClient: HttpClient) {}
 
-  public enviarNotificacion(data: any): Observable<any> {
-    console.log(data);
+  public enviarNotificacion(data: any, payload: any): Observable<any> {
     return this.httpClient.post(
-      `https://notification-test-15xa0l06c-eduarchilon.vercel.app/api/enviar-notificacion`,
+      `https://notification-test-bice.vercel.app/api/enviar-notificacion`,
       {
-        data: data,
+        data: { data, payload },
       }
     );
   }

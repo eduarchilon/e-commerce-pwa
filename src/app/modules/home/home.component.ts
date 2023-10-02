@@ -28,8 +28,27 @@ export class HomeComponent {
   }
 
   sendNotification(): void {
+    //Notification data example
+    const payload = {
+      notification: {
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/2048px-Facebook_icon_%28black%29.svg.png',
+        badge:
+          'https://i.pinimg.com/1200x/4e/5d/6e/4e5d6eb79c88fd031051c1f28b077b32.jpg',
+        title: 'Tomar Misoprostol - Front',
+        body: 'Hoy a las 10am debe tomarla pastilla',
+        vibrate: [100, 50, 100],
+        image:
+          'https://img.squadhelp.com/story_images/visual_images/11155823.jpg?class=show',
+        actions: [
+          {
+            action: 'https://www.google.com',
+            title: 'Ver calendario',
+          },
+        ],
+      },
+    };
     if (this.respuesta !== undefined) {
-      this.notificationService.enviarNotificacion(this.respuesta).subscribe(
+      this.notificationService.enviarNotificacion(this.respuesta, payload).subscribe(
         (response) => {
           console.log('Notificación enviada correctamente:', response);
         },
