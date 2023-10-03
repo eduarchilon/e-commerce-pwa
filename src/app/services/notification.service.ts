@@ -10,7 +10,7 @@ export class NotificationService {
 
   public enviarNotificacion(data: any, payload: any): Observable<any> {
     return this.httpClient.post(
-      `https://notification-test-bice.vercel.app/api/enviar-notificacion`,
+      `https://notification-server-alpha.vercel.app/api/enviar-notificacion`,
       {
         data: { data, payload },
       }
