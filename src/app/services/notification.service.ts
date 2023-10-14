@@ -11,7 +11,7 @@ export class NotificationService {
   public enviarNotificacion(data: any, payload: any): Observable<any> {
     return this.httpClient
       .post(
-        `http://localhost:3000/api/enviar-notificacion`,
+        `https://notification-server-alpha.vercel.app/api/enviar-notificacion`,
         {
           data: { data, payload },
         }
